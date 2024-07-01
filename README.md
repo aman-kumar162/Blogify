@@ -6,17 +6,13 @@ Create a Django web application that allows users to perform CRUD operations on 
 4. **Delete Tweet**: Users can delete their own tweets.
 5. **Authentication**: Only registered users can create, edit, or delete tweets.
 6. **User-specific Permissions**: Users cannot delete tweets created by others.
-7. **
-8. 
-Define a Tweet model with fields for content, user, and timestamps.
-Forms:
 
+
+Forms:
 Create forms for tweet creation and user registration.
 Views:
-
 Implement views for listing, creating, editing, and deleting tweets, ensuring proper user authentication and permissions.
 Templates:
-
 Design templates for displaying tweets and forms.
 
 ## sample image 
