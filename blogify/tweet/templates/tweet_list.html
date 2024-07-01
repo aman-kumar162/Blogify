@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %} tweet page{% endblock %}
+
+{% block content %}
+<h1 class='text-center  mt-4'>
+     All tweet's By Users
+</h1>
+
+<a class="btn btn-primary mb-4" href="{% url 'tweet_create' %}"> Create a Tweet</a>
+<div class="container row gap-3 " style='margin-bottom:10%'>
+  {% for tweet in tweets %}
+  <div class="card" style="width: 18rem; padding:10px position:absolute ">
+    <img src="{{tweet.photo.url}}" class="card-img-top" style='width:16rem; height:18rem; margin-bottom:2rem; object-cover:center' alt="...">
+    <div class="card-body">
+        <h5 class="card-title">
+              {{tweet.user.username}}
+        </h5>
+        <p class="card-text ">
+           {{tweet.text}}
+        </p>
+        {% if tweet.user == user%}
+        <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary" style='position:relative bottom:20%'>Edit</a>
+        <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger" style='position:relative bottom:20%'>Delete</a>
+        {% endif %}
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
